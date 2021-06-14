@@ -2,6 +2,7 @@ total_passed = 0
 total_failed = 0
 
 Before ('not @cuke_sniffer') do |scenario|
+  @html_cs_location = HTML_CS_LOCATION + "/input/"
   begin
     $start_time = Time.now
 
@@ -57,4 +58,13 @@ After ('not @cuke_sniffer') do |scenario|
 
   close_current_browser
   stop_browser_and_driver_server if ENV['browser_kill'] == 'true'
+end
+
+AfterConfiguration do
+  HTML_CS_LOCATION = "html_cs_data"
+  HTMLCS.create_empty_directories(HTML_CS_LOCATION)
+end
+
+at_exit do
+  HTMLCS.compile_html_cs(HTML_CS_LOCATION)
 end

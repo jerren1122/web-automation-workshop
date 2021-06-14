@@ -5,5 +5,6 @@ $LOAD_PATH.unshift(ROOT_DIR, SUPPORT_DIR, FEATURES_DIR)
 
 require 'env'
 require 'cuke_sniffer_extension'
+require 'html_cs_run_parse'
 
 World(CukeSnifferExtension)

@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 group :default do
-
   gem 'rake'
   gem 'ffi'
   gem 'cucumber', '3.1.2'
@@ -14,5 +13,5 @@ group :default do
   gem 'faker'
   gem 'pdf-reader'
   gem 'certified'
-
+  gem 'html_cs_run_parse'
 end
